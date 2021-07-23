@@ -4,4 +4,6 @@
     <string name="singleton">singleton</string>
     <string name="builder">Builder</string>
     <string name="textview1">TextView</string>
+    <string name="decorator">Decorator</string>
+    <string name="decorator1">Decorator</string>
 </resources>

@@ -1,22 +1,21 @@
 package com.example.mysingleton
 
 
-class component private constructor(builder: Builder){
-    var param1: String? = null
 
-    class Builder{
-        private var param1: String? = null
 
-        //setter
-        fun setparam1(param1: String) = apply { this.param1= param1 }
+interface Greet{
+    fun displayGreeting()
+}
 
-        //getter
-        fun getParam1() = param1
-    }
-
-    init{
-        param1 = builder.getParam1()
+abstract class NormalGreeting : Greet{
+    override fun displayGreeting()  {
+        println("Hello Kotlin")
     }
 }
 
-
+abstract class EnhancedGreeting(val greet : Greet ) : Greet by greet{
+    override fun displayGreeting() {
+        println("Hello Hello Kotlin")
+        greet.displayGreeting()
+    }
+}
