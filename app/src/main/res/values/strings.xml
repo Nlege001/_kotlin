@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">My Singleton</string>
+    <string name="textview">TextView</string>
+    <string name="singleton">singleton</string>
+    <string name="builder">Builder</string>
+    <string name="textview1">TextView</string>
 </resources>
