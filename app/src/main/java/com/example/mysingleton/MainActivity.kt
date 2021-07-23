@@ -18,7 +18,7 @@ class MainActivity : AppCompatActivity() {
         val text = findViewById<TextView>(R.id.textViewID)
 
         button1.setOnClickListener {
-            text.text = hello
+            text.text = Greeting.hello
         }
 
         //Builder Buttons
@@ -89,7 +89,7 @@ class MainActivity : AppCompatActivity() {
             return("Hello Kotlin")
         }
     }
-
+    //Decorator class
     class EnhancedGreeting(val greet : Greet ) : Greet by greet{
         override fun displayGreeting(): String {
             return("Hello Kotlin Decorator")
