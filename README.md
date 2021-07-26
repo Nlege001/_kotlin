@@ -7,3 +7,5 @@
    - Adapter Architectural Approach
    - Abstract Architectural Approach
    
+## Snippet of the sample App
+<img src = https://github.com/Nlege001/_kotlin/blob/master/mySingleton.jpg width = 300>
