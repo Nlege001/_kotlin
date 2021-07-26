@@ -9,10 +9,10 @@
   
 
 ## How to run application
-      - Clone the Github repository (Link: https://github.com/Nlege001/_kotlin.git)
-      - Open Android studio and open existing project
-      - Select the file path and open the cloned github file
-      - Read along the code and see comments to understand how each architctural pattern can be used in Object Oriented Programming
+  - Clone the Github repository <(Link: https://github.com/Nlege001/_kotlin.git)>
+  - Open Android studio and open existing project
+  - Select the file path and open the cloned github file
+  - Read along the code and see comments to understand how each architctural pattern can be used in Object Oriented Programming
       
       
 ## Snippet of the sample App
