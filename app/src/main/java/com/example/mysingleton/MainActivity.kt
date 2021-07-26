@@ -20,7 +20,7 @@ class MainActivity : AppCompatActivity() {
         button1.setOnClickListener {
             text.text = Greeting.hello
         }
-
+    //########################################################################
         //Builder Buttons
         val button2 = findViewById<Button>(R.id.button2)
         val text2 = findViewById<TextView>(R.id.textView3)
@@ -28,7 +28,7 @@ class MainActivity : AppCompatActivity() {
         button2.setOnClickListener {
             text2.text = hi.getParam1()
         }
-
+    //########################################################################
 
         //Decorator Buttons
         val button3 = findViewById<Button>(R.id.button3)
@@ -37,18 +37,26 @@ class MainActivity : AppCompatActivity() {
         button3.setOnClickListener {
             text3.text = enhancedGreeting.displayGreeting().toString()
         }
+        //########################################################################
+        //Facade Button
+        val button5 = findViewById<Button>(R.id.button5)
+        val text5 = findViewById<TextView>(R.id.textView5)
+        button5.setOnClickListener{
+            text5.text = greetsHello.showGreetings().toString()
+        }
 
+        //########################################################################
         //Reset button
         val button4 = findViewById<Button>(R.id.button4)
         button4.setOnClickListener {
             text.text = "singleton"
             text2.text = "Builder"
             text3.text = "Decorator"
+            text5.text = "Facade Text"
         }
 
-
     }
-
+    //########################################################################
     // Singleton Class: TODO THE SINGLETON APPROACH CREATES AN INSTANCE ONCE AND GIVES THAT INSTANCE A GLOBAL SCOPE
     object Greeting{
         var hello = "Hello Kotlin"
@@ -99,9 +107,34 @@ class MainActivity : AppCompatActivity() {
     val normalGreeting = NormalGreeting()
     val enhancedGreeting = EnhancedGreeting(normalGreeting)
 
-
-
     }
+
+//#######################################################################################################################################
+    // Facade design pattern
+    interface Greetings{
+        fun createGreeting() : Greetskotlin
+    }
+
+    class GreetHelloKotlin : Greetings{
+        override fun createGreeting() : Greetskotlin {
+            return kotlinGreeting()
+        }
+    }
+
+    interface Greetskotlin{
+        fun showGreetings() : String
+    }
+
+    class kotlinGreeting : Greetskotlin{
+        override fun showGreetings() : String {
+            return("Hello Kotlin")
+        }
+    }
+    val greetHello = GreetHelloKotlin()
+    val greetsHello = greetHello.createGreeting()
+
+
+
 
 
 

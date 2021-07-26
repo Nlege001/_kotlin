@@ -6,4 +6,5 @@
     <string name="textview1">TextView</string>
     <string name="decorator">Decorator</string>
     <string name="decorator1">Decorator</string>
+    <string name="reset">RESET</string>
 </resources>

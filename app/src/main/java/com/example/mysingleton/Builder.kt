@@ -3,19 +3,23 @@ package com.example.mysingleton
 
 
 
-interface Greet{
-    fun displayGreeting()
+interface Greeting{
+    fun createGreeting() : Greets
+    abstract fun showGreeting(): Greets
 }
 
-abstract class NormalGreeting : Greet{
-    override fun displayGreeting()  {
-        println("Hello Kotlin")
+abstract class GreetHello : Greeting{
+    override fun createGreeting() : Greets{
+        return showGreeting()
     }
 }
 
-abstract class EnhancedGreeting(val greet : Greet ) : Greet by greet{
-    override fun displayGreeting() {
-        println("Hello Hello Kotlin")
-        greet.displayGreeting()
+interface Greets{
+    fun showGreeting()
+}
+
+class kotlinGreet : Greets{
+    override fun showGreeting() {
+        println("Hello Kotlin")
     }
 }
