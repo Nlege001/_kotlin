@@ -54,6 +54,17 @@ class MainActivity : AppCompatActivity() {
 
 
         //########################################################################
+        //Brdige Button
+
+        val button7 = findViewById<Button>(R.id.button7)
+        val text7 = findViewById<TextView>(R.id.textView7)
+        button7.setOnClickListener {
+            text7.text = first.showBrdigeGreeting().toString()
+        }
+
+
+
+        //########################################################################
         //Reset button
         val button4 = findViewById<Button>(R.id.button4)
         button4.setOnClickListener {
@@ -62,6 +73,7 @@ class MainActivity : AppCompatActivity() {
             text3.text = "Decorator"
             text5.text = "Abstract Text"
             text6.text = "Adapter Text"
+            text7.text = "Builder Text"
         }
 
     }
@@ -142,7 +154,7 @@ class MainActivity : AppCompatActivity() {
     val greetsHello = greetHello.createGreeting()
 
     //#######################################################################################################################################
-    //Adapter design pattern
+    //Adapter design pattern  TODO: The adapter pattern is used to provide a link between two otherwise incompatible types by wrapping the "adaptee" with a class that supports the interface required by the client.
     interface AdapterGreeting{
         fun adapterHelloKotlin(adapterHello : String) : String
     }
@@ -171,6 +183,41 @@ class MainActivity : AppCompatActivity() {
     }
     val adapteeVal = AdapteeGreeting()
     val adapterVal = AdapterHelloKotlin(adapteeVal)
+
+    //#######################################################################################################################################
+    //Bridge design pattern : TODO Decouple an abstraction from its implementation so that the two can vary independently.
+    interface BridgeGreeting{
+        fun getBridgeGreeting() : String
+    }
+
+    class firstBridgeGreeting : BridgeGreeting{
+        override fun getBridgeGreeting() : String {
+            return ("Hello first bridge greeting")
+        }
+    }
+
+    class secondBridgeGreeting : BridgeGreeting{
+        override fun getBridgeGreeting() : String {
+            return("Hello second bridge greeting")
+        }
+    }
+
+
+    interface BridgeGreet{
+        val bridge : BridgeGreeting
+        fun showBrdigeGreeting() : String
+    }
+
+    class Bridges(override val bridge : BridgeGreeting) : BridgeGreet{
+        override fun showBrdigeGreeting() : String {
+            bridge.getBridgeGreeting()
+            return("Hello Bridge Greeting")
+
+        }
+    }
+    val first = Bridges(bridge = firstBridgeGreeting())
+
+
 
 
 
