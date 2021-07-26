@@ -38,7 +38,7 @@ class MainActivity : AppCompatActivity() {
             text3.text = enhancedGreeting.displayGreeting().toString()
         }
         //########################################################################
-        //Facade Button
+        //Abstract Button
         val button5 = findViewById<Button>(R.id.button5)
         val text5 = findViewById<TextView>(R.id.textView5)
         button5.setOnClickListener{
@@ -52,7 +52,7 @@ class MainActivity : AppCompatActivity() {
             text.text = "singleton"
             text2.text = "Builder"
             text3.text = "Decorator"
-            text5.text = "Facade Text"
+            text5.text = "Abstract   Text"
         }
 
     }
@@ -110,7 +110,7 @@ class MainActivity : AppCompatActivity() {
     }
 
 //#######################################################################################################################################
-    // Facade design pattern
+    // Abstract factory design pattern
     interface Greetings{
         fun createGreeting() : Greetskotlin
     }
@@ -127,13 +127,13 @@ class MainActivity : AppCompatActivity() {
 
     class kotlinGreeting : Greetskotlin{
         override fun showGreetings() : String {
-            return("Hello Kotlin")
+            return("Hello Kotlin Abstract")
         }
     }
     val greetHello = GreetHelloKotlin()
     val greetsHello = greetHello.createGreeting()
 
-
+//#######################################################################################################################################
 
 
 
