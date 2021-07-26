@@ -20,7 +20,7 @@ class MainActivity : AppCompatActivity() {
         button1.setOnClickListener {
             text.text = Greeting.hello
         }
-    //########################################################################
+        //########################################################################
         //Builder Buttons
         val button2 = findViewById<Button>(R.id.button2)
         val text2 = findViewById<TextView>(R.id.textView3)
@@ -28,7 +28,7 @@ class MainActivity : AppCompatActivity() {
         button2.setOnClickListener {
             text2.text = hi.getParam1()
         }
-    //########################################################################
+        //########################################################################
 
         //Decorator Buttons
         val button3 = findViewById<Button>(R.id.button3)
@@ -44,6 +44,14 @@ class MainActivity : AppCompatActivity() {
         button5.setOnClickListener{
             text5.text = greetsHello.showGreetings().toString()
         }
+        //########################################################################
+        //Adapter Button
+        val button6 = findViewById<Button>(R.id.button6)
+        val text6 = findViewById<TextView>(R.id.textView6)
+        button6.setOnClickListener {
+            text6.text = adapterVal.adapterHelloKotlin("adapterHello").toString()
+        }
+
 
         //########################################################################
         //Reset button
@@ -52,7 +60,8 @@ class MainActivity : AppCompatActivity() {
             text.text = "singleton"
             text2.text = "Builder"
             text3.text = "Decorator"
-            text5.text = "Abstract   Text"
+            text5.text = "Abstract Text"
+            text6.text = "Adapter Text"
         }
 
     }
@@ -61,10 +70,9 @@ class MainActivity : AppCompatActivity() {
     object Greeting{
         var hello = "Hello Kotlin"
         }
+
+
     //#######################################################################################################################################
-
-
-
     //Builder class : TODO THE BUILDER DESIGN PATTERN HELPS TO provide a flexible solution to various object creation problems in object-oriented programming
     class component constructor(builder: Builder){
         var param1: String? = null
@@ -87,7 +95,7 @@ class MainActivity : AppCompatActivity() {
 
 
     //#######################################################################################################################################
-    //Decorator class : TODO that allows behavior to be added to an individual object, dynamically, without affecting the behavior of other objects from the same class
+    //Decorator class : TODO The decorator pattern is used to extend or alter the functionality of objects at run-time by wrapping them in an object of a decorator class. This provides a flexible alternative to using inheritance to modify behaviour.
     interface Greet{
         fun displayGreeting() : String
     }
@@ -109,8 +117,8 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-//#######################################################################################################################################
-    // Abstract factory design pattern
+    //#######################################################################################################################################
+    // Abstract factory design pattern : TODO Provide an interface for creating families of related or dependent objects without specifying their concrete classes
     interface Greetings{
         fun createGreeting() : Greetskotlin
     }
@@ -133,7 +141,44 @@ class MainActivity : AppCompatActivity() {
     val greetHello = GreetHelloKotlin()
     val greetsHello = greetHello.createGreeting()
 
-//#######################################################################################################################################
+    //#######################################################################################################################################
+    //Adapter design pattern
+    interface AdapterGreeting{
+        fun adapterHelloKotlin(adapterHello : String) : String
+    }
+
+    class AdapterGreetingKoltin : AdapterGreeting{
+        override fun adapterHelloKotlin(adapterHello: String) : String {
+            return("Hello kotlin")
+        }
+    }
+    //the class below takes an adaptee role
+    class AdapteeGreeting{
+        fun adapterHelloKoltin(adaptee : String){
+            println("Hello Adaptee kotlin")
+        }
+    }
+
+    // Adapter class
+    class AdapterHelloKotlin(private val adapteeGreeting : AdapteeGreeting) : AdapterGreeting{
+        override fun adapterHelloKotlin(adapterHello: String): String {
+            val adapteeGreet = getAdapterGreeting()
+            adapteeGreeting.adapterHelloKoltin(adapteeGreet)
+            return("Hello kotlin Adapter")
+        }
+
+        private fun getAdapterGreeting() : String = "Hello"
+    }
+    val adapteeVal = AdapteeGreeting()
+    val adapterVal = AdapterHelloKotlin(adapteeVal)
+
+
+
+
+
+
+
+
 
 
 
