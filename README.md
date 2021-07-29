@@ -1,5 +1,5 @@
 # Architectural Design Project
-### This is a sample application that implements 6 of the 23 architectural design principles.
+### This is a sample application that implements 6 of the 23 architectural design principles.(Refer to the file 'mainActivity.kt' to see how each is implemented)
    - Singleton Architectural Approach
    - Builder Architectural Approach
    - Decorator Architectural Approach
