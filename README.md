@@ -1,5 +1,6 @@
 # Architectural Design Project - Fox SDK Team
- - This was one of the demo project I did while I was working with the FOX SDKs team.
+ - This was one of the demo projects I did while I was working with the FOX SDKs team.
+
 ### This is a sample application that implements 6 of the 23 architectural design principles.(Refer to the file 'mainActivity.kt' to see how each is implemented)
    - Singleton Architectural Approach
    - Builder Architectural Approach
