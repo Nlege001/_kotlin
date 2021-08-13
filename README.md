@@ -18,6 +18,7 @@
 - [Snippet of sample app](#d)
 
 
+<div name = 'a'/>
 
 ## ✅ Introduction
 - This was one of the demo projects I did while I was working with the FOX SDKs team.
@@ -29,7 +30,8 @@
    - [Bridge Architectural Approach](#4)
    - [Adapter Architectural Approach](#5)
    - [Abstract Architectural Approach](#6)
-  
+
+<div name = 'b'/>
 
 ##  ✅ How to run application
   - Clone the Github repository (Link: https://github.com/Nlege001/_kotlin.git)
@@ -37,9 +39,11 @@
   - Select the file path and open the cloned github file
   - Read along the code and see comments to understand how each architctural pattern can be used in Object Oriented Programming
 
+<div name = 'c'/>
 
 ##  ✅ Section Explanations
 
+<div name = '1'/>
 
 ### 1. The Singleton Architectural Approach
 
@@ -51,6 +55,7 @@
         var hello = "Hello Kotlin"
         }
 ```
+<div name = '2'/>
 
 ### 2. The Builder Architectural Approach
 - This approach Separates the construction of a complex object from its representation so that the same construction processes can create different representations.
@@ -78,6 +83,8 @@ class component constructor(builder: Builder){
     val hi = component.Builder().setparam1("Hello Kotlin")
 
 ```
+<div name = '3'/>
+
 ### 3. The Decorator Architectural Approach
 - This approach attachs additional responsibilities to an object dynamically. Decorators provide a flexible alternative to subclassing for extending functionality.
 ```Kotlin
@@ -103,6 +110,8 @@ class component constructor(builder: Builder){
 
     }
 ```
+<div name = '4'/>
+
 ### 4. The Bridge Architectural Approach
 - Helps in Decoupling an abstraction from its implementation so that the two can vary independently.
 ```Kotlin
@@ -141,6 +150,8 @@ class component constructor(builder: Builder){
 
 
 ```
+<div name = '5'/>
+
 ### 5. The Adapter Architectural Approach
 - Converts the interface of a class into another interface clients expect. Adapter lets classes work together that couldn’t otherwise because of incompatibility interfaces.
 
@@ -176,6 +187,8 @@ class component constructor(builder: Builder){
     val adapterVal = AdapterHelloKotlin(adapteeVal)
 
 ```
+<div name = '6'/>
+
 ### 6. The Abstract Architectural Approach
 - Provides an interface for creating families of related or dependent objects without specifying their concrete classes.
 
@@ -206,6 +219,7 @@ class component constructor(builder: Builder){
 
 ```
 
+<div name = 'd'/>
 
       
 ##  ✅ Snippet of the sample App
