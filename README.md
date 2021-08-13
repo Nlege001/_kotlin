@@ -6,12 +6,12 @@
  - This was one of the demo projects I did while I was working with the FOX SDKs team.
 
 ### This is a sample application that implements 6 of the 23 architectural design principles.(Refer to the file 'mainActivity.kt' to see how each is implemented)
-   - Singleton Architectural Approach
-   - Builder Architectural Approach
-   - Decorator Architectural Approach
-   - Bridge Architectural Approach
-   - Adapter Architectural Approach
-   - Abstract Architectural Approach
+   - [Singleton Architectural Approach](#1)
+   - [Builder Architectural Approach](#2)
+   - [Decorator Architectural Approach](#3)
+   - [Bridge Architectural Approach](#4)
+   - [Adapter Architectural Approach](#5)
+   - [Abstract Architectural Approach](#6)
   
 
 ## How to run application
