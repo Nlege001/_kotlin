@@ -86,6 +86,32 @@ class component constructor(builder: Builder){
 
     }
 ```
+### 4. The Bridge Architectural Approach
+- Helps in Decoupling an abstraction from its implementation so that the two can vary independently.
+```Kotlin
+//Decorator class : TODO The decorator pattern is used to extend or alter the functionality of objects at run-time by wrapping them in an object of a decorator class. This provides a flexible alternative to using inheritance to modify behaviour.
+    interface Greet{
+        fun displayGreeting() : String
+    }
+
+    class NormalGreeting : Greet{
+        override fun displayGreeting(): String {
+            return("Hello Kotlin")
+        }
+    }
+    //Decorator class
+    class EnhancedGreeting(val greet : Greet ) : Greet by greet{
+        override fun displayGreeting(): String {
+            return("Hello Kotlin Decorator")
+        }
+    }
+
+    val normalGreeting = NormalGreeting()
+    val enhancedGreeting = EnhancedGreeting(normalGreeting)
+
+    }
+
+```
 
 
       
