@@ -1,3 +1,5 @@
+<img src = https://github.com/Nlege001/_kotlin/blob/master/FOX_Logo-removebg-preview.png width = 50>
+
 # Architectural Design Project - ```Fox SDK Team```
  - This was one of the demo projects I did while I was working with the FOX SDKs team.
 
