@@ -26,13 +26,38 @@
 
 ### 1. The Singleton Architectural Approach
 
-- This Approach Ensure a class only has one instance, and provide a global point of access to it.
+- This Approach Ensures that a class only has one instance, and provide a global point of access to it.
 
 ```Kotlin
 // Singleton Class: TODO THE SINGLETON APPROACH CREATES AN INSTANCE ONCE AND GIVES THAT INSTANCE A GLOBAL SCOPE
     object Greeting{
         var hello = "Hello Kotlin"
         }
+```
+
+### 2.The Builder Architectural Approach
+- This approach Separates the construction of a complex object from its representation so that the same construction processes can create different representations.
+
+```Kotlin
+class component constructor(builder: Builder){
+        var param1: String? = null
+
+        class Builder{
+            private var param1: String? = null
+
+            //setter
+            fun setparam1(param1: String) = apply { this.param1= param1 }
+
+            //getter
+            fun getParam1() = param1
+        }
+
+        init{
+            param1 = builder.getParam1()
+        }
+    }
+    val hi = component.Builder().setparam1("Hello Kotlin")
+
 ```
       
       
