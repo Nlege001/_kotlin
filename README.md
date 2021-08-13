@@ -39,6 +39,8 @@
 - This approach Separates the construction of a complex object from its representation so that the same construction processes can create different representations.
 
 ```Kotlin
+//Builder class : TODO THE BUILDER DESIGN PATTERN HELPS TO provide a flexible solution to various object creation problems in object-oriented programming
+
 class component constructor(builder: Builder){
         var param1: String? = null
 
@@ -59,7 +61,33 @@ class component constructor(builder: Builder){
     val hi = component.Builder().setparam1("Hello Kotlin")
 
 ```
-      
+### 3. The Decorator Architectural Approach
+- This approach attachs additional responsibilities to an object dynamically. Decorators provide a flexible alternative to subclassing for extending functionality.
+```Kotlin
+//Decorator class : TODO The decorator pattern is used to extend or alter the functionality of objects at run-time by wrapping them in an object of a decorator class. This provides a flexible alternative to using inheritance to modify behaviour.
+    interface Greet{
+        fun displayGreeting() : String
+    }
+
+    class NormalGreeting : Greet{
+        override fun displayGreeting(): String {
+            return("Hello Kotlin")
+        }
+    }
+    //Decorator class
+    class EnhancedGreeting(val greet : Greet ) : Greet by greet{
+        override fun displayGreeting(): String {
+            return("Hello Kotlin Decorator")
+        }
+    }
+
+    val normalGreeting = NormalGreeting()
+    val enhancedGreeting = EnhancedGreeting(normalGreeting)
+
+    }
+```
+
+
       
 ## Snippet of the sample App
 <img src = https://github.com/Nlege001/_kotlin/blob/master/mySingleton.jpg width = 200>
