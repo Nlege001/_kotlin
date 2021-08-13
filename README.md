@@ -19,6 +19,21 @@
   - Open Android studio and open existing project
   - Select the file path and open the cloned github file
   - Read along the code and see comments to understand how each architctural pattern can be used in Object Oriented Programming
+
+
+## Section Explanations
+
+
+### 1. The Singleton Architectural Approach
+
+- This Approach Ensure a class only has one instance, and provide a global point of access to it.
+
+```Kotlin
+// Singleton Class: TODO THE SINGLETON APPROACH CREATES AN INSTANCE ONCE AND GIVES THAT INSTANCE A GLOBAL SCOPE
+    object Greeting{
+        var hello = "Hello Kotlin"
+        }
+```
       
       
 ## Snippet of the sample App
