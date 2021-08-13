@@ -112,6 +112,70 @@ class component constructor(builder: Builder){
     }
 
 ```
+### 5. The Adapter Architectural Approach
+- Converts the interface of a class into another interface clients expect. Adapter lets classes work together that couldn’t otherwise because of incompatibility interfaces.
+
+```Kotlin
+//Adapter design pattern  TODO: The adapter pattern is used to provide a link between two otherwise incompatible types by wrapping the "adaptee" with a class that supports the interface required by the client.
+    interface AdapterGreeting{
+        fun adapterHelloKotlin(adapterHello : String) : String
+    }
+
+    class AdapterGreetingKoltin : AdapterGreeting{
+        override fun adapterHelloKotlin(adapterHello: String) : String {
+            return("Hello kotlin")
+        }
+    }
+    //the class below takes an adaptee role
+    class AdapteeGreeting{
+        fun adapterHelloKoltin(adaptee : String){
+            println("Hello Adaptee kotlin")
+        }
+    }
+
+    // Adapter class
+    class AdapterHelloKotlin(private val adapteeGreeting : AdapteeGreeting) : AdapterGreeting{
+        override fun adapterHelloKotlin(adapterHello: String): String {
+            val adapteeGreet = getAdapterGreeting()
+            adapteeGreeting.adapterHelloKoltin(adapteeGreet)
+            return("Hello kotlin Adapter")
+        }
+
+        private fun getAdapterGreeting() : String = "Hello"
+    }
+    val adapteeVal = AdapteeGreeting()
+    val adapterVal = AdapterHelloKotlin(adapteeVal)
+
+```
+### 6. The Abstract Architectural Approach
+- Provides an interface for creating families of related or dependent objects without specifying their concrete classes.
+
+```Kotlin
+ // Abstract factory design pattern : TODO Provide an interface for creating families of related or dependent objects without specifying their concrete classes
+    interface Greetings{
+        fun createGreeting() : Greetskotlin
+    }
+
+    class GreetHelloKotlin : Greetings{
+        override fun createGreeting() : Greetskotlin {
+            return kotlinGreeting()
+        }
+    }
+
+    interface Greetskotlin{
+        fun showGreetings() : String
+    }
+
+    class kotlinGreeting : Greetskotlin{
+        override fun showGreetings() : String {
+            return("Hello Kotlin Abstract")
+        }
+    }
+    val greetHello = GreetHelloKotlin()
+    val greetsHello = greetHello.createGreeting()
+
+
+```
 
 
       
