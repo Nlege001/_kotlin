@@ -6,6 +6,16 @@
 
 
 ## ✅ Table of Contents
+- [Introduction](#a)
+- [How to run the application](#b)
+- [Section Exlpanatiions](#c)
+   - [Singleton Architectural Approach](#1)
+   - [Builder Architectural Approach](#2)
+   - [Decorator Architectural Approach](#3)
+   - [Bridge Architectural Approach](#4)
+   - [Adapter Architectural Approach](#5)
+   - [Abstract Architectural Approach](#6)
+- [Snippet of sample app](#d)
 
 
 
